@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Rezepte</title>
+  </head>
+  <body>
+  <section>
+    <h2>Rezepte</h2>
+    {% for recipe in recipes %}
+      <div>
+        <a href="/recipe/{{recipe}}">{{recipe}}</a>
+        <a href="/delete/{{recipe}}">Delete</a>
+        <br />
+      </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Neues Rezept erstellen</h2>
+    <form action="/new" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required />
+      <input type="text" name="title" placeholder="Rezeptname" required />
+      <button type="submit">Rezept erstellen</button>
+    </form>
+  </section>
+  </body>
+</html>
