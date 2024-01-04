@@ -74,6 +74,6 @@ def download_file(name):
     mime = magic.from_file(os.path.join(RECIPE_DIR, name), mime=True)
     return send_from_directory(RECIPE_DIR, name), {'Content-Type': mime}
 
- 
-app.run(port=8080)
+if __name__ == '__main__':
+    app.run(port=8080)
 
