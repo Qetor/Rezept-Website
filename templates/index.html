@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <title>Rezepte</title>
-  </head>
-  <body>
-  <section>
-    <h2>Rezepte</h2>
+
+<head>
+  <title>Rezepte</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+  <div id="top-bar">
+    <a href="{{ url_for('main.root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
+
+    <form id="searchbar-form" action="{{ url_for('main.search') }}" method="get">
+      <input id="searchbar" type="text" name="q" placeholder="Search" value="{{query}}" required>
+    </form>
+
+    <div id="add-container">
+      <a id="add" href="{{ url_for('main.new_recipe') }}">Add</a>
+    </div>
+  </div>
+  <section id="recipes-container">
+    <h2 class="heading">Rezepte</h2>
     {% for recipe in recipes %}
-      <div>
-        <a href="/recipe/{{recipe}}">{{recipe}}</a>
-        <a href="/delete/{{recipe}}">Delete</a>
-        <br />
-      </div>
+    <div class="centered-delete-container">
+      <a href="{{ url_for('main.get_recipe', name=recipe) }}">{{recipe}}</a>
+      <a id="delete" id="add-container" href="{{ url_for('main.delete_recipe', name=recipe) }}">Delete</a>
+    </div>
     {% endfor %}
   </section>
 
-  <section>
-    <h2>Neues Rezept erstellen</h2>
-    <form action="/new" method="POST" enctype="multipart/form-data">
-      <input type="file" name="image" accept="image/*" required />
-      <input type="text" name="title" placeholder="Rezeptname" required />
-      <button type="submit">Rezept erstellen</button>
-    </form>
-  </section>
-  </body>
+</body>
+
 </html>

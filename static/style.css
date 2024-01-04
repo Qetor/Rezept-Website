@@ -1,0 +1,139 @@
+:root {
+  --accent: #31F673;
+  --accent2: #3E5963;
+  --background: #222;
+  --text: #FFFFFF;
+  --text2: #3E5963;
+  --image-filter: brightness(0) saturate(100%) invert(33%) sepia(18%) saturate(728%) hue-rotate(151deg) brightness(90%) contrast(88%);
+  --heading: #665A5A;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  background: var(--background);
+  color: var(--text);
+}
+
+body {
+  min-height: 90vh;
+}
+
+a {
+  color: var(--text2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 0px 30px;
+}
+
+#add {
+  background: var(--accent);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  color: var(--background);
+  float: right;
+}
+
+#delete {
+  background: var(--accent2);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--background);
+}
+
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#recipes-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.centered-delete-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 5px;
+
+}
+
+.heading {
+  text-align: center;
+  color: var(--heading);
+}
+
+#logo {
+  filter: var(--image-filter);
+  height: auto;
+  width: 200px;
+}
+
+#add-container {
+  width: 200px;
+}
+
+#button_add_recipe {
+  background: var(--accent2);
+  color: var(--background);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+}
+
+#button_recipe_name {
+  background: #24202D;
+  color: var(--text);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: 1px solid var(--heading);
+}
+
+#image_picker {
+  color: var(--heading);
+  filter: brightness(200%);
+}
+
+#image_picker::file-selector-button {
+  background-color: var(--accent2);
+  color: var(--background);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  filter: brightness(50%);
+  border: none;
+}
+
+#searchbar {
+  background: var(--accent2);
+  color: var(--background);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  text-align: center;
+}
+
+#searchbar-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
