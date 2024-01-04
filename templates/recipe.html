@@ -7,14 +7,16 @@
 </head>
 
 <body>
-  <a href="{{ url_for('root') }}">Back</a>
+  <div id="top-bar">
+    <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
+    <a id="add" href="{{ url_for('root') }}">Back</a>
+  </div>
 
-  <section>
-    <h2>{{name}}</h2>
+  <section class="centered-container">
+    <h2 id="heading-recipe">{{name}}</h2>
     <a href="{{url_for('download_file', name=name)}}">
       <img src="{{url_for('download_file', name=name)}}">
     </a>
-    <a href="{{url_for('delete_recipe', name=name)}}">Delete</a>
     <br />
   </section>
 </body>

@@ -137,3 +137,7 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+
+#heading-recipe {
+  color: var(--heading);
+}

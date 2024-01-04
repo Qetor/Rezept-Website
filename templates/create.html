@@ -7,10 +7,10 @@
 </head>
 
 <body>
-  <div id="add-container">
+  <div id="top-bar">
+    <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
     <a id="add" href="{{ url_for('root') }}">Back</a>
   </div>
-  <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
   <h2 class="heading">Neues Rezept erstellen</h2>
   <form class="centered-container" action="{{ url_for('new_recipe') }}" method="POST" enctype="multipart/form-data">
     <input id="image_picker" type="file" name="image" accept="image/*" required />
