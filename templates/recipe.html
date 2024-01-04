@@ -7,14 +7,14 @@
 </head>
 
 <body>
-  <a href="{{ url_for('main.root') }}">Back</a>
+  <a href="{{ url_for('root') }}">Back</a>
 
   <section>
     <h2>{{name}}</h2>
-    <a href="{{url_for('main.download_file', name=name)}}">
-      <img src="{{url_for('main.download_file', name=name)}}">
+    <a href="{{url_for('download_file', name=name)}}">
+      <img src="{{url_for('download_file', name=name)}}">
     </a>
-    <a href="{{url_for('main.delete_recipe', name=name)}}">Delete</a>
+    <a href="{{url_for('delete_recipe', name=name)}}">Delete</a>
     <br />
   </section>
 </body>

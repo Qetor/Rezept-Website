@@ -8,22 +8,22 @@
 
 <body>
   <div id="top-bar">
-    <a href="{{ url_for('main.root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
+    <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
 
-    <form id="searchbar-form" action="{{ url_for('main.search') }}" method="get">
+    <form id="searchbar-form" action="{{ url_for('search') }}" method="get">
       <input id="searchbar" type="text" name="q" placeholder="Search" value="{{query}}" required>
     </form>
 
     <div id="add-container">
-      <a id="add" href="{{ url_for('main.new_recipe') }}">Add</a>
+      <a id="add" href="{{ url_for('new_recipe') }}">Add</a>
     </div>
   </div>
   <section id="recipes-container">
     <h2 class="heading">Rezepte</h2>
     {% for recipe in recipes %}
     <div class="centered-delete-container">
-      <a href="{{ url_for('main.get_recipe', name=recipe) }}">{{recipe}}</a>
-      <a id="delete" id="add-container" href="{{ url_for('main.delete_recipe', name=recipe) }}">Delete</a>
+      <a href="{{ url_for('get_recipe', name=recipe) }}">{{recipe}}</a>
+      <a id="delete" id="add-container" href="{{ url_for('delete_recipe', name=recipe) }}">Delete</a>
     </div>
     {% endfor %}
   </section>
