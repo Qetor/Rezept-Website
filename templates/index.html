@@ -1,33 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
+  <head>
+    <title>Rezepte</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='favicon.svg') }}"
+    />
+  </head>
 
-<head>
-  <title>Rezepte</title>
-  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-</head>
+  <body>
+    <div id="top-bar">
+      <a href="{{ url_for('root') }}"
+        ><img
+          id="logo"
+          src="{{ url_for('static', filename='cooking_boss.svg') }}"
+      /></a>
 
-<body>
-  <div id="top-bar">
-    <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
+      <form id="searchbar-form" action="{{ url_for('search') }}" method="get">
+        <input
+          id="searchbar"
+          type="text"
+          name="q"
+          placeholder="Search"
+          value="{{query}}"
+          required
+        />
+      </form>
 
-    <form id="searchbar-form" action="{{ url_for('search') }}" method="get">
-      <input id="searchbar" type="text" name="q" placeholder="Search" value="{{query}}" required>
-    </form>
-
-    <div id="add-container">
-      <a id="add" href="{{ url_for('new_recipe') }}">Add</a>
+      <div id="add-container">
+        <a id="add" href="{{ url_for('new_recipe') }}">Add</a>
+      </div>
     </div>
-  </div>
-  <section id="recipes-container">
-    <h2 class="heading">Rezepte</h2>
-    {% for recipe in recipes %}
-    <div class="centered-delete-container">
-      <a href="{{ url_for('get_recipe', name=recipe) }}">{{recipe}}</a>
-      <a id="delete" id="add-container" href="{{ url_for('delete_recipe', name=recipe) }}">Delete</a>
-    </div>
-    {% endfor %}
-  </section>
-
-</body>
-
+    <section id="recipes-container">
+      <h2 class="heading">Rezepte</h2>
+      {% for recipe in recipes %}
+      <div class="centered-delete-container">
+        <a href="{{ url_for('get_recipe', name=recipe) }}">{{recipe}}</a>
+        <a
+          id="delete"
+          id="add-container"
+          href="{{ url_for('delete_recipe', name=recipe) }}"
+          >Delete</a
+        >
+      </div>
+      {% endfor %}
+    </section>
+  </body>
 </html>

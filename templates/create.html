@@ -1,22 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
+  <head>
+    <title>Rezept erstellen</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='favicon.svg') }}"
+    />
+  </head>
 
-<head>
-  <title>Rezept erstellen</title>
-  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-</head>
-
-<body>
-  <div id="top-bar">
-    <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
-    <a id="add" href="{{ url_for('root') }}">Back</a>
-  </div>
-  <h2 class="heading">Neues Rezept erstellen</h2>
-  <form class="centered-container" action="{{ url_for('new_recipe') }}" method="POST" enctype="multipart/form-data">
-    <input id="image_picker" type="file" name="image" accept="image/*" required />
-    <input id="button_recipe_name" type="text" name="title" placeholder="Rezeptname" required />
-    <button id="button_add_recipe" type="submit">Rezept erstellen</button>
-  </form>
-</body>
-
+  <body>
+    <div id="top-bar">
+      <a href="{{ url_for('root') }}"
+        ><img
+          id="logo"
+          src="{{ url_for('static', filename='cooking_boss.svg') }}"
+      /></a>
+      <a id="add" href="{{ url_for('root') }}">Back</a>
+    </div>
+    <h2 class="heading">Neues Rezept erstellen</h2>
+    <form
+      class="centered-container"
+      action="{{ url_for('new_recipe') }}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input
+        id="image_picker"
+        type="file"
+        name="image"
+        accept="image/*"
+        required
+      />
+      <input
+        id="button_recipe_name"
+        type="text"
+        name="title"
+        placeholder="Rezeptname"
+        required
+      />
+      <button id="button_add_recipe" type="submit">Rezept erstellen</button>
+    </form>
+  </body>
 </html>

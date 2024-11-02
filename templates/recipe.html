@@ -1,24 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
+  <head>
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='favicon.svg') }}"
+    />
+  </head>
 
-<head>
-  <title>{{name}}</title>
-  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-</head>
+  <body>
+    <div id="top-bar">
+      <a href="{{ url_for('root') }}"
+        ><img
+          id="logo"
+          src="{{ url_for('static', filename='cooking_boss.svg') }}"
+      /></a>
+      <a id="add" href="{{ url_for('root') }}">Back</a>
+    </div>
 
-<body>
-  <div id="top-bar">
-    <a href="{{ url_for('root') }}"><img id="logo" src="{{ url_for('static', filename='cooking_boss.svg') }}"></a>
-    <a id="add" href="{{ url_for('root') }}">Back</a>
-  </div>
-
-  <section class="centered-container">
-    <h2 id="heading-recipe">{{name}}</h2>
-    <a id="recipe-image-link" href="{{url_for('download_file', name=name)}}">
-      <img id="recipe-image" src="{{url_for('download_file', name=name)}}">
-    </a>
-    <br />
-  </section>
-</body>
-
+    <section class="centered-container">
+      <h2 id="heading-recipe">{{name}}</h2>
+      <a id="recipe-image-link" href="{{url_for('download_file', name=name)}}">
+        <img id="recipe-image" src="{{url_for('download_file', name=name)}}" />
+      </a>
+      <br />
+    </section>
+  </body>
 </html>
