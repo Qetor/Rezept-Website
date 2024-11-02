@@ -32,7 +32,7 @@ def search():
     
     lower_query = query.lower()
 
-    recipes = [recipe.lower() for recipe in get_recipes_list() if lower_query in recipe]
+    recipes = [recipe for recipe in get_recipes_list() if lower_query in recipe.lower()]
     
     return render_template("index.html", recipes=recipes, query=query)
 
