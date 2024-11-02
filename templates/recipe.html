@@ -14,8 +14,8 @@
 
   <section class="centered-container">
     <h2 id="heading-recipe">{{name}}</h2>
-    <a href="{{url_for('download_file', name=name)}}">
-      <img src="{{url_for('download_file', name=name)}}">
+    <a id="recipe-image-link" href="{{url_for('download_file', name=name)}}">
+      <img id="recipe-image" src="{{url_for('download_file', name=name)}}">
     </a>
     <br />
   </section>

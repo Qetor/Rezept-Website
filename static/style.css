@@ -141,3 +141,11 @@ a:hover {
 #heading-recipe {
   color: var(--heading);
 }
+
+#recipe-image {
+	width: 100%;
+}
+
+#recipe-image-link {
+	width: 70%;
+}
